@@ -24,11 +24,11 @@ class Book < ApplicationRecord
     end
   end
   
-  after_destory do
+  after_destroy do
     Rails.logger.info "Book is deleted: #{self.attributes}"
   end
   
-  after_destory :if => :high_price? do
+  after_destroy :if => :high_price? do
     Rails.logger.warn "Book with high price is deleted: #{self.attrivutes}"
     Rails.logger.warn "Plese check!"
   end

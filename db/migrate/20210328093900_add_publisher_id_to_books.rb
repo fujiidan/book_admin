@@ -4,3 +4,4 @@ class AddPublisherIdToBooks < ActiveRecord::Migration[6.0]
     change_column :books, :publisher_id, :integer, null:false
   end
 end
+strs

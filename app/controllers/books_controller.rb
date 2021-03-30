@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   protect_from_forgery except: [:destroy]
-  before_acttion :set_book, only: [:show, :destroy]
+  before_action :set_book, only: [:show, :destroy]
   around_action :action_logger, only: [:destroy]
   before_action do
     redirect_to access_denied_path if params[:token].blank?
@@ -9,7 +9,7 @@ class BooksController < ApplicationController
   def show
     respond_to do |format|
       format.html
-      format.json
+      format.json 
     end
   end
 
